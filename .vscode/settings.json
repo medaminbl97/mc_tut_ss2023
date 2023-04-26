@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "tm4c123gh6pm.h": "c"
+    },
+    "cortex-debug.variableUseNaturalFormat": true,
+    "cortex-debug.registerUseNaturalFormat": false
+}
