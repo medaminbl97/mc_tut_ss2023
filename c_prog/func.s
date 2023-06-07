@@ -23,6 +23,17 @@ for:
     bx lr
 
 upper_case:
-    mov r1,#0x67
-    strb r1,[r0]
+    mov r2,#0
+for1:
+    cmp r2,r1
+    beq end
+
+    ldrb r3,[r0],#1
+
+    sub r3,#32
+    strb r3,[r0,#-1]
+    add r2,#1
+    b for1
+
+end:
     bx lr;
