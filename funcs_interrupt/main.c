@@ -71,12 +71,12 @@ void set_interrupt_portf(){
 void init_systick_(){ 
 
     // (1 / f) * n = t mit f = clk frequency
-    float t = 0.5;
+    float t = 0.050;
     int n = (16e6)*t;
 
     SysTick->LOAD = n;
-    SysTick->CTRL = (1 << 0) | (1 <<1 ) | (1 << 2);
-    SysTick->CTRL |= 7;
+    //SysTick->CTRL = (1 << 0) | (1 <<1 ) | (1 << 2);
+    SysTick->CTRL = 6;
 
     
     }
@@ -85,7 +85,8 @@ void init_systick_(){
 void GPIOPortF_Handler(){
     if( GPIOF->RIS & (1 << 4)){
         GPIOF->ICR |=(1 << 4);
-        GPIOF->DATA ^= (1 << 1);
+        
+        SysTick->CTRL |= 1;
     }
 
 
@@ -95,7 +96,12 @@ void GPIOPortF_Handler(){
 
 
 void SysTick_Handler(){
-    GPIOF->DATA ^= (1 << 2);
+    SysTick->CTRL &= ~1;
+
+    if( !(GPIOF->DATA & (1 << 4))){
+        GPIOF->DATA ^= (1 << 1);
+    }
+
 }
 
 
@@ -128,10 +134,6 @@ int main(){
         set_portf_data(3,OFF);*/
     }
     
-
-
-
-
 
 
     return 0;
