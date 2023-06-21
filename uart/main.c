@@ -41,7 +41,7 @@ void send_c(char c){
 
 char get_c(){
     while(UART0->FR & (1 << 4)){}
-    return UART0->DR ;
+       return UART0->DR ;
 }
 
 
