@@ -1,0 +1,5 @@
+build/
+
+**/.vscode/.cortex-debug.registers.state.json
+**/.vscode/.cortex-debug.peripherals.state.json
+

@@ -1,0 +1,3 @@
+[submodule "tivaware"]
+	path = tivaware
+	url = https://gitlab.oth-regensburg.de/EI/LV/mc/tivaware.git

@@ -52,12 +52,14 @@ void adc_init(){
     GPIOD->DEN &= ~(1 << 3);
 
 
+
     ADC0->ACTSS &= ~0xf;
     ADC0->SSMUX3 |= (1 << 2);
     ADC0->SSCTL3 |= (1 << 1);
     ADC0->EMUX &= ~(0xf << 12);
     ADC0->ACTSS |= (1 << 3);
     
+    ADC0->SS
 
 
 

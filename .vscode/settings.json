@@ -1,6 +1,8 @@
 {
     "files.associations": {
-        "tm4c123gh6pm.h": "c"
+        "tm4c123gh6pm.h": "c",
+        "algorithm": "c",
+        "locale": "c"
     },
     "cortex-debug.variableUseNaturalFormat": true,
     "cortex-debug.registerUseNaturalFormat": false

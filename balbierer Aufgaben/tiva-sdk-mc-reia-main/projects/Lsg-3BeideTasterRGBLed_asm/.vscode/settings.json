@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "tm4c123.h": "c",
+        "fpu.h": "c",
+        "cpu.h": "c",
+        "sysctl.h": "c",
+        "tm4c123gh6pm.h": "c"
+    },
+    "cortex-debug.variableUseNaturalFormat": false,
+    "cmake.generator": "Unix Makefiles"
+}

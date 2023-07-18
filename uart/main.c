@@ -9,6 +9,7 @@ void uart_init(){
     int fbrd = (16e6 / (16 * 9600) - ibrd) * 64 + 0.5;
 
     UART0->CTL &= ~(1 << 0);
+    
 
     UART0->IBRD = ibrd;
     UART0->FBRD = fbrd;
@@ -41,7 +42,8 @@ void send_c(char c){
 
 char get_c(){
     while(UART0->FR & (1 << 4)){}
-       return UART0->DR ;
+    char c = UART0->DR;
+       return c ;
 }
 
 
